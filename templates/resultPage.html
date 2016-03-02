@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All users</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>birthDate</th>
+        </tr>
+        <#list users as data>
+            <tr>
+                <td>
+                    <#if data.id??>${data.id}
+                        <#else>N/A
+                    </#if></td>
+                <td>${data.name}</td>
+                <td>${data.birthDate}</td>
+            </tr>
+        </#list>
+    </table>
+
+    <form action="/addUser.html">
+        <input type="submit" value="Add another one">
+    </form>
+    <form method="post">
+        <input type="submit" value="Save to DB">
+    </form>
+</body>
+</html>
